@@ -5,7 +5,7 @@
     {
       "src": "/logo.jpeg",
       "type": "image/jpeg",
-      "sizes": "512x512",
+      "sizes": "any",
       "purpose": "any"
     }
   ],
