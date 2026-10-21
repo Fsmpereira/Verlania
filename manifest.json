@@ -3,9 +3,9 @@
   "name": "Verlânia - Controle Financeiro",
   "icons": [
     {
-      "src": "/logo.jpeg",
-      "type": "image/jpeg",
-      "sizes": "any",
+      "src": "https://imgur.com",
+      "type": "image/png",
+      "sizes": "512x512",
       "purpose": "any"
     }
   ],
