@@ -1,21 +1,16 @@
 {
-  "short_name": "Verlania",
-  "name": "Verlania Finanças",
-  "icons": [
-    {
-      "src": "web-app-manifest-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "web-app-manifest-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ],
+  "id": "/",
+  "name": "Verlânia",
+  "short_name": "Verlânia",
+  "description": "Controle de finanças pessoais",
   "start_url": "/",
-  "background_color": "#0d6b45",
-  "theme_color": "#0d6b45",
+  "scope": "/",
   "display": "standalone",
-  "orientation": "portrait"
+  "background_color": "#F5F7FA",
+  "theme_color": "#15405F",
+  "icons": [
+    { "src": "/web-app-manifest-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/web-app-manifest-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/web-app-manifest-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
 }
