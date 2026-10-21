@@ -1,16 +1,17 @@
 {
-  "short_name": "Verlânia",
-  "name": "Verlânia - Controle Financeiro",
+  "short_name": "Verlania",
+  "name": "Verlania Finanças",
   "icons": [
     {
-      "src": "/logo.png",
-      "type": "image/png",
-      "sizes": "any",
-      "purpose": "any"
+      "src": "logo.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
     }
   ],
   "start_url": "/",
-  "background_color": "#ffffff",
+  "background_color": "#0d6b45",
+  "theme_color": "#0d6b45",
   "display": "standalone",
-  "theme_color": "#023047"
+  "orientation": "portrait"
 }
