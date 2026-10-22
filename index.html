@@ -16,7 +16,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:400 14px/1.45 Figtree,s
 h2{font-size:15px;margin:0 0 10px}
 .top{background:var(--navy);color:#fff;position:sticky;top:0;z-index:5}
 .top>div{max-width:1100px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:20px}
-.logo{font-weight:700;font-size:28px;line-height:1;letter-spacing:-.4px;margin-right:6px}.brand{display:flex;align-items:center;gap:10px;margin-right:6px;font-weight:700;font-size:18px;letter-spacing:-.2px;white-space:nowrap}.brand img{width:38px;height:38px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.4);flex:none}
+.logo{font-weight:700;font-size:28px;line-height:1;letter-spacing:-.4px;margin-right:6px}.syncbtn{margin-left:auto;background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:50%;width:38px;height:38px;font-size:19px;line-height:1;cursor:pointer;position:relative;flex:none}.syncbtn::after{content:"";position:absolute;top:1px;right:1px;width:10px;height:10px;border-radius:50%;background:#9AA3A8;border:2px solid var(--navy)}.syncbtn.ok::after{background:#3FD08A}.syncbtn.err::after{background:#E5534B}.brand{display:flex;align-items:center;gap:10px;margin-right:6px;font-weight:700;font-size:18px;letter-spacing:-.2px;white-space:nowrap}.brand img{width:38px;height:38px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.4);flex:none}
 .tabs{display:flex;gap:4px;flex:1}
 .tabs button,.bnav button{background:none;border:0;color:inherit;font:inherit;cursor:pointer;padding:8px 12px;border-radius:8px;opacity:.85}
 .tabs button.on{opacity:1;font-weight:700;box-shadow:inset 0 -3px #fff;border-radius:0}
@@ -61,6 +61,7 @@ input,select{font:inherit;padding:9px 10px;border-radius:10px;border:1px solid v
   <span class="brand"><img src="data:image/jpeg;base64,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" alt="Logo"><span>Finanças Pessoais</span></span>
   <nav class="tabs" id="tabs"><button data-t="geral" class="on">Visão geral</button><button data-t="lanc">Lançamentos</button><button data-t="rel">Relatórios</button><button data-t="metas">Metas</button></nav>
   <button class="btn pri desk" id="add">+ Lançamento</button>
+  <button class="syncbtn" id="syncBtn" aria-label="Sincronizar entre aparelhos" title="Sincronizar entre aparelhos">⟳</button>
 </div></header>
 
 <main class="wrap">
@@ -108,6 +109,14 @@ input,select{font:inherit;padding:9px 10px;border-radius:10px;border:1px solid v
   <label>Situação<select id="fs"><option value="1">Pago</option><option value="0">Pendente (lembrar)</option></select></label><label id="lpar">Parcelamento<select id="fpar"></select></label><small class="mute" id="invp"></small>
   <div class="two"><button type="button" class="btn" data-c="dTx">Cancelar</button><button class="btn pri">Salvar</button></div></form></dialog>
 <dialog id="dMeta"><form method="dialog" id="fMeta"><h2 id="tMeta">Nova meta</h2><label>Categoria<select id="mc"></select></label><label>Limite mensal (R$)<input id="mv" type="number" min="1" step="1" required></label><div class="two"><button type="button" class="btn" data-c="dMeta">Cancelar</button><button class="btn pri">Salvar</button></div></form></dialog>
+<dialog id="dSync"><h2>Sincronizar aparelhos</h2>
+<p class="mute" style="margin-top:0">Use o mesmo código no celular e no computador para ver os mesmos dados nos dois. Tudo é criptografado antes de sair do aparelho. Guarde o código: sem ele não é possível recuperar os dados.</p>
+<label>Código de sincronização (mínimo 8 caracteres)<input id="scode" type="password" autocomplete="off"></label>
+<p id="syncst" class="mute" role="status"></p>
+<div id="syncch" hidden><p>Escolha qual versão manter:</p><div class="two"><button type="button" class="btn" id="useCloud">Usar os da nuvem</button><button type="button" class="btn" id="useLocal">Enviar os deste aparelho</button></div></div>
+<div class="two"><button type="button" class="btn pri" id="syncOn">Ativar</button><button type="button" class="btn" id="syncNow" hidden>Sincronizar agora</button></div>
+<button type="button" class="btn" id="syncOff" hidden style="width:100%;margin-top:8px">Desativar neste aparelho</button>
+<button type="button" class="btn" data-c="dSync" style="width:100%;margin-top:8px">Fechar</button></dialog>
 <dialog id="dDel"><h2>Confirmar exclusão</h2><p id="delm"></p><div class="two"><button type="button" class="btn" data-c="dDel">Cancelar</button><button type="button" class="btn pri" id="delok" style="background:var(--out);border-color:var(--out)">Excluir</button></div><button type="button" class="btn" id="delone" style="display:none;width:100%;margin-top:8px">Só esta parcela</button></dialog>
 <dialog id="dAcc"><form method="dialog" id="fAcc"><h2 id="tAcc">Nova conta</h2><label>Banco<select id="ak" class="bk"></select></label><label>Ou envie o logo do seu banco (opcional)<input id="ai" type="file" accept="image/*"></label><label>Nome<input id="an" required maxlength="30" placeholder="Ex.: Banco do Brasil"></label><label>Saldo inicial (R$)<input id="ab" type="number" step="0.01" value="0"></label><div class="two"><button type="button" class="btn" data-c="dAcc">Cancelar</button><button class="btn pri">Salvar</button></div></form></dialog>
 <dialog id="dCard"><form method="dialog" id="fCard"><h2 id="tCard">Novo cartão</h2><label>Banco<select id="ck" class="bk"></select></label><label>Ou envie o logo do cartão (opcional)<input id="ci" type="file" accept="image/*"></label><label>Nome<input id="cn" required maxlength="30" placeholder="Ex.: Nubank"></label><div class="two"><label>Limite (R$)<input id="cl" type="number" min="0" step="0.01" required></label><label>Vencimento (dia)<input id="cd" type="number" min="1" max="31" value="10"></label></div><label>Fechamento da fatura (dia)<input id="cf" type="number" min="1" max="31" required placeholder="Ex.: 3"></label><small class="mute">Compras feitas depois do dia de fechamento entram na fatura do mês seguinte.</small><div class="two"><button type="button" class="btn" data-c="dCard">Cancelar</button><button class="btn pri">Salvar</button></div></form></dialog>
@@ -129,7 +138,9 @@ function updInv(){const e=$("invp"),c=kind==="out"&&$("fp").value==="cartao"?S.c
 function logo(x){if(x.img)return `<span class="ic"><img src="${x.img}" alt="${esc(x.name)}"></span>`;const b=BANKS.find(k=>k[0]===x.bank),l=b&&b[2]?b[2]:x.name[0].toUpperCase();return `<span class="ic" style="background:${b?b[1]:"var(--g)"};color:${b&&b[3]||"#fff"};font-size:${l.length>2?10:13}px">${esc(l)}</span>`}
 let S={acc:[],cards:[],tx:[],bud:{},hide:false,col:{}};
 try{const r=localStorage.getItem("verlania:v2");if(r)Object.assign(S,JSON.parse(r));else{const o=JSON.parse(localStorage.getItem("verlania:v1")||"null");if(o){S.tx=o.tx||[];S.bud=o.bud||{}}}}catch(e){}
-const save=()=>{try{localStorage.setItem("verlania:v2",JSON.stringify(S))}catch(e){}};
+let sy=null,pt=null;
+const persist=()=>{try{localStorage.setItem("verlania:v2",JSON.stringify(S))}catch(e){}};
+const save=()=>{S.u=Date.now();persist();if(sy){clearTimeout(pt);pt=setTimeout(()=>syncNow(),1500)}};
 const brl=v=>S.hide?"R$ •••••":v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 let cur=new Date();cur.setDate(1);let kind="out";
@@ -171,7 +182,7 @@ function render(){
 }
 function tab(t){document.querySelectorAll(".sec").forEach(s=>s.classList.toggle("on",s.id==="s-"+t));document.querySelectorAll("[data-t]").forEach(b=>b.classList.toggle("on",b.dataset.t===t));scrollTo(0,0)}
 document.querySelectorAll("[data-t]").forEach(b=>b.onclick=()=>tab(b.dataset.t));
-$("eye").onclick=()=>{S.hide=!S.hide;save();render()};
+$("eye").onclick=()=>{S.hide=!S.hide;persist();render()};
 $("prev").onclick=()=>{cur.setMonth(cur.getMonth()-1);render()};$("next").onclick=()=>{cur.setMonth(cur.getMonth()+1);render()};
 function fillTx(){$("fc").innerHTML=(kind==="in"?IN:CATS).map(([c])=>`<option>${c}</option>`).join("");$("lk").style.display=$("lp").style.display=kind==="in"?"none":"";fillRef()}
 function fillRef(){const c=kind==="out"&&$("fp").value==="cartao",L=c?S.cards:S.acc;$("fr").innerHTML=L.map(x=>`<option value="${x.id}">${esc(x.name)}</option>`).join("")||`<option value="">${c?"Nenhum cartão cadastrado":"Nenhuma conta cadastrada"}</option>`;$("fr").required=c;$("lr").firstChild.textContent=c?"Cartão de crédito":"Conta";$("fs").parentElement.style.display=kind==="out"&&!c?"":"none";$("lpar").style.display=c&&!eTx?"":"none";updInv()}
@@ -205,12 +216,61 @@ $("fMeta").onsubmit=()=>{S.bud[$("mc").value]=parseFloat($("mv").value)||0;save(
 $("metas").onclick=e=>{const D=(e.target.closest("button")||{}).dataset||{};if(D.em)openMeta(D.em);else if(D.dm)ask("Excluir esta meta?",()=>{delete S.bud[D.dm]})};
 const SECS=[["accs","Minhas contas"],["cards","Cartões de crédito"],["top","Maiores gastos do mês"],["bud","Metas do mês"],["rem","Lembretes de vencimento"]];
 function applyCol(){SECS.forEach(([k])=>{const cl=!!S.col[k],c=$(k).parentElement;c.classList.toggle("closed",cl);c.querySelector(".sh").setAttribute("aria-expanded",String(!cl))})}
-SECS.forEach(([k,t])=>{const b=$(k),c=b.parentElement;b.classList.add("sb");c.querySelector("h2").innerHTML=`<button class="sh" data-sec="${k}" aria-expanded="true"><span>${t}</span><span class="bd" id="bd-${k}" hidden></span>${IC}</button>`;c.querySelector(".sh").onclick=()=>{S.col[k]=!S.col[k];save();applyCol();render()}});
+SECS.forEach(([k,t])=>{const b=$(k),c=b.parentElement;b.classList.add("sb");c.querySelector("h2").innerHTML=`<button class="sh" data-sec="${k}" aria-expanded="true"><span>${t}</span><span class="bd" id="bd-${k}" hidden></span>${IC}</button>`;c.querySelector(".sh").onclick=()=>{S.col[k]=!S.col[k];persist();applyCol();render()}});
 applyCol();
 $("fpar").innerHTML=Array.from({length:12},(_,i)=>`<option value="${i+1}">${i?(i+1)+"x":"À vista"}</option>`).join("");
 ["fdt","fv","fpar","fr"].forEach(i=>$(i).addEventListener("input",updInv));
 try{if("serviceWorker" in navigator&&location.hostname.endsWith("vercel.app"))navigator.serviceWorker.register("/sw.js").catch(()=>{})}catch(e){}
+/*SYNC-START*/
+let again=false,busy=false;
+const b64=u=>{let s="";for(let i=0;i<u.length;i+=32768)s+=String.fromCharCode.apply(null,u.subarray(i,i+32768));return btoa(s)};
+const unb64=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
+const hex=b=>[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("");
+async function mkKey(code){const e=new TextEncoder(),km=await crypto.subtle.importKey("raw",e.encode(code),"PBKDF2",false,["deriveBits","deriveKey"]),p=s=>({name:"PBKDF2",salt:e.encode(s),iterations:150000,hash:"SHA-256"});return{id:hex(await crypto.subtle.deriveBits(p("verlania-id"),km,256)),key:await crypto.subtle.deriveKey(p("verlania-key"),km,{name:"AES-GCM",length:256},false,["encrypt","decrypt"])}}
+async function encD(o){const iv=crypto.getRandomValues(new Uint8Array(12)),ct=new Uint8Array(await crypto.subtle.encrypt({name:"AES-GCM",iv},sy.key,new TextEncoder().encode(JSON.stringify(o)))),a=new Uint8Array(12+ct.length);a.set(iv);a.set(ct,12);return b64(a)}
+async function decD(s){const a=unb64(s);return JSON.parse(new TextDecoder().decode(await crypto.subtle.decrypt({name:"AES-GCM",iv:a.slice(0,12)},sy.key,a.slice(12))))}
+const snap=()=>({acc:S.acc,cards:S.cards,tx:S.tx,bud:S.bud});
+const hasData=()=>!!(S.acc.length||S.cards.length||S.tx.length||Object.keys(S.bud).length);
+const apply=o=>{S.acc=o.acc||[];S.cards=o.cards||[];S.tx=o.tx||[];S.bud=o.bud||{}};
+const uni=(a,b)=>{const m=new Map((b||[]).map(x=>[x.id,x]));(a||[]).forEach(x=>m.set(x.id,x));return[...m.values()]};
+function merge(o){S.acc=uni(S.acc,o.acc);S.cards=uni(S.cards,o.cards);S.tx=uni(S.tx,o.tx);S.bud=Object.assign({},o.bud,S.bud);S.u=Date.now()}
+function setSt(t,ok){$("syncst").textContent=t;$("syncBtn").className="syncbtn"+(ok===true?" ok":ok===false?" err":"")}
+async function api(m,body){const r=await fetch("/api/sync?id="+sy.id,{method:m,cache:"no-store",headers:{"Content-Type":"application/json"},body:body?JSON.stringify(body):undefined});let j=null;try{j=await r.json()}catch(e){}return{s:j?r.status:0,j:j||{}}}
+async function push(){if(!S.u)S.u=Date.now();const r=await api("PUT",{base:S.su||0,u:S.u,data:await encD(snap())});if(r.s===200){S.su=S.u;persist();return}if(r.s===409){again=true;return}throw 0}
+async function syncNow(){if(!sy)return;if(busy){again=true;return}busy=true;setSt("Sincronizando…",null);
+ try{const r=await api("GET");if(r.s!==200)throw 0;const sv=r.j;
+  if(sv.data&&sv.u>(S.su||0)){const o=await decD(sv.data);if((S.u||0)>(S.su||0))merge(o);else{apply(o);S.u=sv.u}S.su=sv.u;persist();render()}
+  if((S.u||0)>(S.su||0)||(!sv.data&&hasData()))await push();
+  setSt("Sincronizado às "+new Date().toLocaleTimeString("pt-BR",{hour:"2-digit",minute:"2-digit"}),true)
+ }catch(e){setSt("Sem conexão. Tentarei de novo.",false)}
+ busy=false;if(again){again=false;setTimeout(syncNow,300)}}
+/*SYNC-END*/
+
+let cloud=null;
+const active=()=>{try{return !!localStorage.getItem("verlania:sync")}catch(e){return false}};
+function updSync(){const a=active();$("syncOn").hidden=a;$("syncNow").hidden=!a;$("syncOff").hidden=!a;$("scode").disabled=a;$("scode").value=a?"••••••••":""}
+function keep(c){try{localStorage.setItem("verlania:sync",c)}catch(e){}$("syncch").hidden=true;cloud=null;updSync()}
+$("syncBtn").onclick=()=>{updSync();$("dSync").showModal()};
+$("syncNow").onclick=()=>syncNow();
+$("syncOff").onclick=()=>{sy=null;try{localStorage.removeItem("verlania:sync")}catch(e){}setSt("Sincronização desativada neste aparelho. Seus dados continuam aqui.",null);updSync()};
+$("dSync").addEventListener("close",()=>{if(!active()){sy=null;cloud=null;$("syncch").hidden=true}});
+$("syncOn").onclick=async()=>{const c=$("scode").value.trim();if(c.length<8){setSt("Use pelo menos 8 caracteres.",false);return}
+ setSt("Conectando…",null);
+ try{const k=await mkKey(c);sy={code:c,id:k.id,key:k.key};const r=await api("GET");
+  if(r.s===404||r.s===0){sy=null;setSt("A função api/sync.js não foi encontrada neste endereço. Ela precisa estar publicada na Vercel.",false);return}
+  if(r.s!==200){sy=null;setSt(r.j.error||"O servidor de sincronização ainda não está pronto.",false);return}
+  if(r.j.data&&hasData()){cloud=r.j;$("syncch").hidden=false;setSt("Já existem dados na nuvem e neste aparelho. Escolha qual manter.",null);return}
+  if(r.j.data){apply(await decD(r.j.data));S.su=S.u=r.j.u;persist();render();keep(c);setSt("Dados da nuvem carregados.",true);return}
+  S.su=0;S.u=Date.now();await push();persist();keep(c);setSt(hasData()?"Dados enviados para a nuvem.":"Ativado. Nenhum dado encontrado com esse código. Se este é o segundo aparelho, confira o código.",true)
+ }catch(e){sy=null;setSt("Não foi possível conectar.",false)}};
+$("useCloud").onclick=async()=>{try{apply(await decD(cloud.data));S.su=S.u=cloud.u;persist();render();keep(sy.code);setSt("Dados da nuvem carregados.",true)}catch(e){setSt("Não foi possível ler os dados da nuvem.",false)}};
+$("useLocal").onclick=async()=>{try{S.su=cloud.u;S.u=Date.now();await push();persist();keep(sy.code);setSt("Dados deste aparelho enviados para a nuvem.",true)}catch(e){setSt("Não foi possível enviar.",false)}};
+async function loadSync(){let c=null;try{c=localStorage.getItem("verlania:sync")}catch(e){}if(!c)return;try{const k=await mkKey(c);sy={code:c,id:k.id,key:k.key};syncNow()}catch(e){}}
+document.addEventListener("visibilitychange",()=>{if(!document.hidden)syncNow()});
+addEventListener("online",()=>syncNow());
+setInterval(()=>{if(!document.hidden)syncNow()},60000);
 render();
+loadSync();
 </script>
 </body>
 </html>
